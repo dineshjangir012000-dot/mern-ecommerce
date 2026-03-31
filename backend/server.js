@@ -28,9 +28,14 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-  origin: ["http://localhost:8080", "http://localhost:8081"],
+  origin: [
+    "http://localhost:8080",
+    "http://localhost:8081",
+    "https://your-client.vercel.app",
+    "https://your-admin.vercel.app"
+  ],
   credentials: true
-})); 
+}));
 
 // app.use("/uploads", express.static("uploads"));
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
