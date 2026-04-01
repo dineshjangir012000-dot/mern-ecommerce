@@ -27,19 +27,19 @@ const app = express();
 
 app.use(express.json());
 
-// app.use(cors({
-//   origin: [
-//     "http://localhost:8080",
-//     "http://localhost:8081",
-//     "https://mern-ecommerce-phi-five.vercel.app"
-//   ],
-//   credentials: true
-// }));
-
 app.use(cors({
-  origin: true,
+  origin: [
+    "http://localhost:8080",
+    "http://localhost:8081",
+    "https://mern-ecommerce-phi-five.vercel.app"
+  ],
   credentials: true
 }));
+
+// app.use(cors({
+//   origin: true,
+//   credentials: true
+// }));
 
 
 // app.use("/uploads", express.static("uploads"));
