@@ -27,15 +27,20 @@ const app = express();
 
 app.use(express.json());
 
+// app.use(cors({
+//   origin: [
+//     "http://localhost:8080",
+//     "http://localhost:8081",
+//     "https://mern-ecommerce-phi-five.vercel.app"
+//   ],
+//   credentials: true
+// }));
+
 app.use(cors({
-  origin: [
-    "http://localhost:8080",
-    "http://localhost:8081",
-    "https://your-client.vercel.app",
-    "https://your-admin.vercel.app"
-  ],
+  origin: true,
   credentials: true
 }));
+
 
 // app.use("/uploads", express.static("uploads"));
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));

@@ -8,6 +8,7 @@ import { Loader2, Lock, Mail, ShieldCheck } from 'lucide-react';
 // import { useToast } from '@/hooks/use-toast';
 import axios from "axios";
 import { toast } from 'sonner';
+import { API_BASE_URL } from '../apihelper';
 
 export default function AdminLogin() {
   const [email, setEmail] = useState('');
@@ -26,7 +27,7 @@ export default function AdminLogin() {
     e.preventDefault();
 
     try {
-      const res = await axios.post(`http://localhost:3000/api/user/logIn`, 
+      const res = await axios.post(`${API_BASE_URL}/api/user/logIn`, 
         {email , password }
       )
       console.log("response", res)
